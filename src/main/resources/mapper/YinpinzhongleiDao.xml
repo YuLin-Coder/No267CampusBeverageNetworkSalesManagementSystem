@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YinpinzhongleiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YinpinzhongleiEntity" id="yinpinzhongleiMap">
+        <result property="yinpinzhonglei" column="yinpinzhonglei"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YinpinzhongleiVO" >
+		SELECT * FROM yinpinzhonglei  yinpinzhonglei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YinpinzhongleiVO" >
+		SELECT  yinpinzhonglei.* FROM yinpinzhonglei  yinpinzhonglei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YinpinzhongleiView" >
+
+		SELECT  yinpinzhonglei.* FROM yinpinzhonglei  yinpinzhonglei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YinpinzhongleiView" >
+		SELECT * FROM yinpinzhonglei  yinpinzhonglei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

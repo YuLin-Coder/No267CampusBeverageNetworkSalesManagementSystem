@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YinpinxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YinpinxinxiEntity" id="yinpinxinxiMap">
+        <result property="yinpinbianhao" column="yinpinbianhao"/>
+        <result property="yinpinmingcheng" column="yinpinmingcheng"/>
+        <result property="yinpinzhonglei" column="yinpinzhonglei"/>
+        <result property="yinpintupian" column="yinpintupian"/>
+        <result property="yinpinguige" column="yinpinguige"/>
+        <result property="yinpinkouwei" column="yinpinkouwei"/>
+        <result property="yinpintese" column="yinpintese"/>
+        <result property="yinpinjieshao" column="yinpinjieshao"/>
+        <result property="shangjiazhanghao" column="shangjiazhanghao"/>
+        <result property="shangjiaxingming" column="shangjiaxingming"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="price" column="price"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YinpinxinxiVO" >
+		SELECT * FROM yinpinxinxi  yinpinxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YinpinxinxiVO" >
+		SELECT  yinpinxinxi.* FROM yinpinxinxi  yinpinxinxi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YinpinxinxiView" >
+
+		SELECT  yinpinxinxi.* FROM yinpinxinxi  yinpinxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YinpinxinxiView" >
+		SELECT * FROM yinpinxinxi  yinpinxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
